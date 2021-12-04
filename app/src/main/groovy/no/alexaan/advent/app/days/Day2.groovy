@@ -1,21 +1,8 @@
 package no.alexaan.advent.app.days
 
-class Dec2 {
+class Day2 extends Day {
 
-    static List<String> readFileLineByLine(String filePath) {
-        def lines = []
-        File file = new File(filePath)
-        def line
-        file.withReader { reader ->
-            while ((line = reader.readLine()) != null) {
-                //println "${line}"
-                lines.add(line)
-            }
-        }
-        return lines
-    }
-
-    def static multiplyPositionAndDepth() {
+    def part1() {
         def lines = readFileLineByLine("dec2")
 
         def x = 0
@@ -39,9 +26,10 @@ class Dec2 {
 
         //println "Multiplying ${x} and ${y} to ${x * y}"
         x * y
+        println "Multiplied position and depth ${x * y}" // 1936494
     }
 
-    def static multiplyPositionAndDepthWithAim() {
+    def part2() {
         def lines = readFileLineByLine("dec2")
 
         def x = 0
@@ -66,6 +54,6 @@ class Dec2 {
         }
 
         //println "Multiplying ${x} and ${y} to ${x * y}"
-        x * y
+        println "Pos and depth with aim ${x * y}" // 1997106066
     }
 }

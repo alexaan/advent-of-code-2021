@@ -1,20 +1,8 @@
 package no.alexaan.advent.app.days
 
-class Dec3 {
+class Day3 extends Day {
 
-    static List<String> readFileLineByLine(String filePath) {
-        def lines = []
-        File file = new File(filePath)
-        def line
-        file.withReader { reader ->
-            while ((line = reader.readLine()) != null) {
-                lines.add(line)
-            }
-        }
-        return lines
-    }
-
-    def static calcPowerConsumption() {
+    def part1() { //calcPowerConsumption
         def lines = readFileLineByLine("dec3")
 
         def bitsForIndex = (0..11).collect { [] }
@@ -36,10 +24,10 @@ class Dec3 {
         int gamma = Integer.parseInt(gammaBinary, 2)
         int epsilon = Integer.parseInt(epsilonBinary, 2)
 
-        gamma * epsilon
+        println "power Consumption ${gamma * epsilon}"
     }
 
-    def static calcLifeSupportRating() {
+    def part2() {
         def lines = readFileLineByLine("dec3")
 
         def oxLines = lines.collect()
@@ -68,6 +56,6 @@ class Dec3 {
 
         int co2 = Integer.parseInt(co2Lines[0], 2)
 
-        return ox * co2
+        println "Life support rating ${ox * co2}"
     }
 }
