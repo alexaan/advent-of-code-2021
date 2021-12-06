@@ -121,13 +121,19 @@ class Day4 extends Day {
         score
     }
 
-    static hasRowWin(List b) {
+    static hasRowWin(List board) {
         def hasWinningRow = false
-        (0..4).each { rn ->
+        (0..4).each { rowIndex ->
             if (hasWinningRow) {
                 return
             }
-            def row = [b[0 + rn * 5], b[1 + rn * 5], b[2 + rn * 5], b[3 + rn * 5], b[4 + rn * 5]]
+            def row = [
+                board[0 + rowIndex * 5],
+                board[1 + rowIndex * 5],
+                board[2 + rowIndex * 5],
+                board[3 + rowIndex * 5],
+                board[4 + rowIndex * 5]
+            ]
             if (row.every { it[1] == true }) {
                 //println "winner by row board $b"
                 hasWinningRow = true
@@ -136,14 +142,20 @@ class Day4 extends Day {
         return hasWinningRow
     }
 
-    static def hasColumnWin(List b) {
+    static def hasColumnWin(List board) {
         def hasWinningColumn = false
 
-        (0..4).each { cn ->
+        (0..4).each { columnIndex ->
             if (hasWinningColumn) {
                 return
             }
-            def column = [b[cn], b[cn + 5], b[cn + (5 * 2)], b[cn + (5 * 3)], b[cn + (5 * 4)]]
+            def column = [
+                board[columnIndex + (5 * 0)],
+                board[columnIndex + (5 * 1)],
+                board[columnIndex + (5 * 2)],
+                board[columnIndex + (5 * 3)],
+                board[columnIndex + (5 * 4)]
+            ]
             if (column.every { it[1] == true }) {
                 //println "winner by column board $b"
                 hasWinningColumn = true
