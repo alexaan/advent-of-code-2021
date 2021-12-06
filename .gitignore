@@ -16,3 +16,4 @@ gradle-app.setting
 gradlew
 gradlew.bat
 .idea
+buildSrc/build/
