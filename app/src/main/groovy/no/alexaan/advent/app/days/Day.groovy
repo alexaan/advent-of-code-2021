@@ -1,18 +1,15 @@
 package no.alexaan.advent.app.days
 
+import java.nio.charset.StandardCharsets
+
 abstract class Day {
 
-    static List<String> readFileLineByLine(String filePath) {
-        def lines = []
-        File file = new File(filePath)
-        def line
-        file.withReader { reader ->
-            while ((line = reader.readLine()) != null) {
-                //println "${line}"
-                lines.add(line)
-            }
-        }
-        return lines
+    static List<String> readResourceByLine(String resource) {
+        def string = new String(
+            Thread.currentThread().getContextClassLoader().getResourceAsStream(resource).bytes,
+            StandardCharsets.UTF_8
+        )
+        return string.split("\n")
     }
 
     def run() {

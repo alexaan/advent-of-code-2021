@@ -3,7 +3,7 @@ package no.alexaan.advent.app.days
 class Day2 extends Day {
 
     def part1() {
-        def lines = readFileLineByLine("dec2")
+        def lines = readResourceByLine("day2")
 
         def x = 0
         def y = 0
@@ -30,7 +30,7 @@ class Day2 extends Day {
     }
 
     def part2() {
-        def lines = readFileLineByLine("dec2")
+        def lines = readResourceByLine("day2")
 
         def x = 0
         def y = 0

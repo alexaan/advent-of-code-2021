@@ -3,7 +3,7 @@ package no.alexaan.advent.app.days
 class Day5 extends Day {
 
     def part1() {
-        def lines = readFileLineByLine("dec5")
+        def lines = readResourceByLine("day5")
 
         Integer[][] matrix = buildMatrix()
 
@@ -29,7 +29,7 @@ class Day5 extends Day {
     }
 
     def part2() {
-        def lines = readFileLineByLine("dec5")
+        def lines = readResourceByLine("day5")
 
         Integer[][] matrix = buildMatrix()
 

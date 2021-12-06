@@ -3,7 +3,7 @@ package no.alexaan.advent.app.days
 class Day3 extends Day {
 
     def part1() { //calcPowerConsumption
-        def lines = readFileLineByLine("dec3")
+        def lines = readResourceByLine("day3")
 
         def bitsForIndex = (0..11).collect { [] }
 
@@ -28,7 +28,7 @@ class Day3 extends Day {
     }
 
     def part2() {
-        def lines = readFileLineByLine("dec3")
+        def lines = readResourceByLine("day3")
 
         def oxLines = lines.collect()
         def ix = 0

@@ -3,7 +3,7 @@ package no.alexaan.advent.app.days
 class Day6 extends Day {
 
     def part1() {
-        def lines = readFileLineByLine("dec6")
+        def lines = readResourceByLine("day6")
 
         def fishAgeInput = lines[0].split(",").collect { it.toInteger() }
         def fishAgeOutput = fishAgeInput.collect()
@@ -26,7 +26,7 @@ class Day6 extends Day {
     }
 
     def part2() {
-        def lines = readFileLineByLine("dec6")
+        def lines = readResourceByLine("day6")
 
         def fishAgeInput = lines[0].split(",").collect { it.toInteger() }
 

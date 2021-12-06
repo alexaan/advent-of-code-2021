@@ -3,7 +3,7 @@ package no.alexaan.advent.app.days
 class Day1 extends Day {
 
     def part1() {
-        def lines = readFileLineByLine("dec1").collect { it as int }
+        def lines = readResourceByLine("day1").collect { it as int }
         def count = 0
 
         lines.eachWithIndex { int entry, int i ->
@@ -18,7 +18,7 @@ class Day1 extends Day {
     }
 
     def part2() {
-        def lines = readFileLineByLine("dec1").collect { it as int }
+        def lines = readResourceByLine("day1").collect { it as int }
         def count = 0
 
         lines.eachWithIndex { int entry, int i ->
