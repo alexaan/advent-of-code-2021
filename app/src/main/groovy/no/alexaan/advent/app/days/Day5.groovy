@@ -62,16 +62,12 @@ class Day5 extends Day {
 
     static def addHorizontalLine(Integer[][] matrix, def xFrom, def xTo, def yFrom, def yTo) {
         // println "Add horizontal $xFrom, $yFrom -> $xTo, $yTo"
-        (xFrom..xTo).each {
-            matrix[yFrom][it] += 1
-        }
+        (xFrom..xTo).each { matrix[yFrom][it] += 1 }
     }
 
     static def addVerticalLine(Integer[][] matrix, def xFrom, def xTo, def yFrom, def yTo) {
         // println "Considering vertical $xFrom $yFrom -> $xTo $yTo"
-        (yFrom..yTo).each {
-            matrix[it][xFrom] += 1
-        }
+        (yFrom..yTo).each { matrix[it][xFrom] += 1 }
     }
 
     static def addDiagonalLine(Integer[][] matrix, def xFrom, def xTo, def yFrom, def yTo) {
@@ -79,10 +75,8 @@ class Day5 extends Day {
         def y = yFrom
         def yDirection = yFrom > yTo ? -1 : 1
         (xFrom..xTo).each { x ->
-            {
-                matrix[y][x] += 1
-                y += (1 * yDirection)
-            }
+            matrix[y][x] += 1
+            y += (1 * yDirection)
         }
     }
 
