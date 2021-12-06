@@ -10,11 +10,7 @@ class Day5 extends Day {
         lines.each {
             def lineNumbers = this.extractLineNumbers(it)
 
-            def xFrom = lineNumbers[0]
-            def xTo = lineNumbers[2]
-
-            def yFrom = lineNumbers[1]
-            def yTo = lineNumbers[3]
+            def (xFrom, xTo, yFrom, yTo) = [lineNumbers[0], lineNumbers[2], lineNumbers[1], lineNumbers[3]]
 
             if (xFrom == xTo || yFrom == yTo) {
                 if (xFrom != xTo) {
@@ -40,11 +36,7 @@ class Day5 extends Day {
         lines.each {
             def lineNumbers = this.extractLineNumbers(it)
 
-            def xFrom = lineNumbers[0]
-            def xTo = lineNumbers[2]
-
-            def yFrom = lineNumbers[1]
-            def yTo = lineNumbers[3]
+            def (xFrom, xTo, yFrom, yTo) = [lineNumbers[0], lineNumbers[2], lineNumbers[1], lineNumbers[3]]
 
             if (xFrom != xTo && yFrom != yTo) {
                 addDiagonalLine(matrix, xFrom, xTo, yFrom, yTo)
@@ -62,16 +54,16 @@ class Day5 extends Day {
 
     static def addHorizontalLine(Integer[][] matrix, def xFrom, def xTo, def yFrom, def yTo) {
         // println "Add horizontal $xFrom, $yFrom -> $xTo, $yTo"
-        (xFrom..xTo).each { matrix[yFrom][it] += 1 }
+        (xFrom..xTo).each { x -> matrix[yFrom][x] += 1 }
     }
 
     static def addVerticalLine(Integer[][] matrix, def xFrom, def xTo, def yFrom, def yTo) {
-        // println "Considering vertical $xFrom $yFrom -> $xTo $yTo"
-        (yFrom..yTo).each { matrix[it][xFrom] += 1 }
+        // println "Add vertical $xFrom, $yFrom -> $xTo, $yTo"
+        (yFrom..yTo).each { y -> matrix[y][xFrom] += 1 }
     }
 
     static def addDiagonalLine(Integer[][] matrix, def xFrom, def xTo, def yFrom, def yTo) {
-        // println "Considering diagonal $xFrom $yFrom -> $xTo $yTo"
+        // println "Add diagonal $xFrom, $yFrom -> $xTo, $yTo"
         def y = yFrom
         def yDirection = yFrom > yTo ? -1 : 1
         (xFrom..xTo).each { x ->
@@ -93,9 +85,9 @@ class Day5 extends Day {
      * Output [260,605, 260, 124]
      */
     def extractLineNumbers(String line) {
-        def pairs = line.split("->")
         def lineNumbers = []
-        pairs.each { it.split(",").each { lineNumbers.add(it.toInteger()) } }
+        def pairs = line.split("->")
+        pairs.each {pair -> pair.split(",").each { s -> lineNumbers.add(s.toInteger()) } }
         lineNumbers
     }
 
