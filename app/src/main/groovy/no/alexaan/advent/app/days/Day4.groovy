@@ -2,8 +2,8 @@ package no.alexaan.advent.app.days
 
 class Day4 extends Day {
 
-    def part1() {
-        def lines = readResourceByLine("day4")
+    def part1(String resource) {
+        def lines = readResourceByLine(resource)
 
         def numbers = lines[0].split(",")
 
@@ -41,8 +41,8 @@ class Day4 extends Day {
         println "First winning board on num $winnerNumber with score $score gives ${winnerNumber * score}" // 33348
     }
 
-    def part2() {
-        def lines = readResourceByLine("day4")
+    def part2(String resource) {
+        def lines = readResourceByLine(resource)
 
         def numbers = lines[0].split(",")
 

@@ -2,8 +2,8 @@ package no.alexaan.advent.app.days
 
 class Day6 extends Day {
 
-    def part1() {
-        def lines = readResourceByLine("day6")
+    def part1(String resource) {
+        def lines = readResourceByLine(resource)
 
         def fishAgeInput = lines[0].split(",").collect { it.toInteger() }
         def fishAgeOutput = fishAgeInput.collect()
@@ -25,8 +25,8 @@ class Day6 extends Day {
         println "${fishAgeOutput.size()} fish after 80 days" // 366057
     }
 
-    def part2() {
-        def lines = readResourceByLine("day6")
+    def part2(String resource) {
+        def lines = readResourceByLine(resource)
 
         def fishAgeInput = lines[0].split(",").collect { it.toInteger() }
 

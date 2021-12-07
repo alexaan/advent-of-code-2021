@@ -2,8 +2,8 @@ package no.alexaan.advent.app.days
 
 class Day1 extends Day {
 
-    def part1() {
-        def lines = readResourceByLine("day1").collect { it as int }
+    def part1(String resource) {
+        def lines = readResourceByLine(resource).collect { it as int }
         def count = 0
 
         lines.eachWithIndex { int entry, int i ->
@@ -17,8 +17,8 @@ class Day1 extends Day {
         println "Increasing measurements count $count" // 1477
     }
 
-    def part2() {
-        def lines = readResourceByLine("day1").collect { it as int }
+    def part2(String resource) {
+        def lines = readResourceByLine(resource).collect { it as int }
         def count = 0
 
         lines.eachWithIndex { int entry, int i ->

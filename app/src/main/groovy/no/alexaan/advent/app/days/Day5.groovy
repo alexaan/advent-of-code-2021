@@ -2,8 +2,8 @@ package no.alexaan.advent.app.days
 
 class Day5 extends Day {
 
-    def part1() {
-        def lines = readResourceByLine("day5")
+    def part1(String resource) {
+        def lines = readResourceByLine(resource)
 
         Integer[][] matrix = buildMatrix()
 
@@ -28,8 +28,8 @@ class Day5 extends Day {
         println "Overlapping horizontal + vertical lines: $overlaps" // 5092
     }
 
-    def part2() {
-        def lines = readResourceByLine("day5")
+    def part2(String resource) {
+        def lines = readResourceByLine(resource)
 
         Integer[][] matrix = buildMatrix()
 
@@ -87,7 +87,7 @@ class Day5 extends Day {
     def extractLineNumbers(String line) {
         def lineNumbers = []
         def pairs = line.split("->")
-        pairs.each {pair -> pair.split(",").each { s -> lineNumbers.add(s.toInteger()) } }
+        pairs.each { pair -> pair.split(",").each { s -> lineNumbers.add(s.toInteger()) } }
         lineNumbers
     }
 

@@ -2,8 +2,8 @@ package no.alexaan.advent.app.days
 
 class Day2 extends Day {
 
-    def part1() {
-        def lines = readResourceByLine("day2")
+    def part1(String resource) {
+        def lines = readResourceByLine(resource)
 
         def x = 0
         def y = 0
@@ -29,8 +29,8 @@ class Day2 extends Day {
         println "Multiplied position and depth ${x * y}" // 1936494
     }
 
-    def part2() {
-        def lines = readResourceByLine("day2")
+    def part2(String resource) {
+        def lines = readResourceByLine(resource)
 
         def x = 0
         def y = 0

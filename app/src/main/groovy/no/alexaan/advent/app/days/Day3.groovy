@@ -2,8 +2,8 @@ package no.alexaan.advent.app.days
 
 class Day3 extends Day {
 
-    def part1() { //calcPowerConsumption
-        def lines = readResourceByLine("day3")
+    def part1(String resource) {
+        def lines = readResourceByLine(resource)
 
         def bitsForIndex = (0..11).collect { [] }
 
@@ -27,8 +27,8 @@ class Day3 extends Day {
         println "power Consumption ${gamma * epsilon}"
     }
 
-    def part2() {
-        def lines = readResourceByLine("day3")
+    def part2(String resource) {
+        def lines = readResourceByLine(resource)
 
         def oxLines = lines.collect()
         def ix = 0

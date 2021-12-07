@@ -2,8 +2,8 @@ package no.alexaan.advent.app.days
 
 class Day7 extends Day {
 
-    def part1() {
-        def lines = readResourceByLine("day7")
+    def part1(String resource) {
+        def lines = readResourceByLine(resource)
 
         def initialPositions = lines[0].split(",").collect { it.toInteger() }
         def min = initialPositions.min()
@@ -25,8 +25,8 @@ class Day7 extends Day {
         println "cheapest fuel cost is $minCost" // 344605
     }
 
-    def part2() {
-        def lines = readResourceByLine("day7")
+    def part2(String resource) {
+        def lines = readResourceByLine(resource)
 
         def initialPositions = lines[0].split(",").collect { it.toInteger() }
 
