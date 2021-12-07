@@ -23,8 +23,8 @@ dependencies {
     // Use the latest Groovy version for building this library
     implementation 'org.codehaus.groovy:groovy-all'
 
-    // Use JUnit Jupiter for testing.
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.2'
+    // Use Spock for testing.
+    testImplementation 'org.spockframework:spock-core:2.1-M2-groovy-3.0'
 }
 
 tasks.named('test') {

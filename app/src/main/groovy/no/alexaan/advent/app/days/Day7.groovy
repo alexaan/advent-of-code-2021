@@ -22,7 +22,8 @@ class Day7 extends Day {
             }
         }
 
-        println "cheapest fuel cost is $minCost" // 344605
+        println "cheapest fuel cost is $minCost"
+        minCost
     }
 
     def part2(String resource) {
@@ -37,6 +38,7 @@ class Day7 extends Day {
             (0..base).each { b -> cost += b }
         }
 
-        println "cheapest fuel cost is $cost" // 93699985
+        println "cheapest fuel cost is $cost"
+        cost
     }
 }

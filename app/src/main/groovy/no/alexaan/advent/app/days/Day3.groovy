@@ -24,7 +24,9 @@ class Day3 extends Day {
         int gamma = Integer.parseInt(gammaBinary, 2)
         int epsilon = Integer.parseInt(epsilonBinary, 2)
 
-        println "power Consumption ${gamma * epsilon}"
+        def result = gamma * epsilon
+        println "power Consumption $result"
+        result
     }
 
     def part2(String resource) {
@@ -56,6 +58,8 @@ class Day3 extends Day {
 
         int co2 = Integer.parseInt(co2Lines[0], 2)
 
-        println "Life support rating ${ox * co2}"
+        def result = ox * co2
+        println "Life support rating $result"
+        result
     }
 }
