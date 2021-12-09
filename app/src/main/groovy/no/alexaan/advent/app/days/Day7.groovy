@@ -1,5 +1,8 @@
 package no.alexaan.advent.app.days
 
+
+import java.math.RoundingMode
+
 class Day7 extends Day {
 
     def part1(String resource) {
@@ -31,14 +34,19 @@ class Day7 extends Day {
 
         def initialPositions = lines[0].split(",").collect { it.toInteger() }
 
-        def avg = new BigDecimal(initialPositions.average() as String).intValue()
-        def cost = 0
+        def avg = new BigDecimal(initialPositions.average() as String)
+        def avgUp = avg.setScale(0, RoundingMode.UP).intValue()
+        def avgDown = avg.setScale(0, RoundingMode.DOWN).intValue()
+        def costDown = 0
+        def costUp = 0
         initialPositions.each { pos ->
-            def base = Math.abs(avg - pos)
-            (0..base).each { b -> cost += b }
+            (0..Math.abs(avgDown - pos)).each { b -> costDown += b }
+            (0..Math.abs(avgUp - pos)).each { b -> costUp += b }
         }
 
-        println "cheapest fuel cost is $cost"
-        cost
+        def minCost = Math.min(costDown, costUp)
+
+        println "cheapest fuel cost is $minCost"
+        minCost
     }
 }

@@ -5,7 +5,7 @@ class Day3 extends Day {
     def part1(String resource) {
         def lines = readResourceByLine(resource)
 
-        def bitsForIndex = (0..11).collect { [] }
+        def bitsForIndex = (0..(lines[0].length() - 1)).collect { [] }
 
         lines.each { l ->
             l.getChars().eachWithIndex { c, i -> bitsForIndex[i].add(c) }
